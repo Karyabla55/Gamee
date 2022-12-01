@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Story {
     static Story weapon = new Story();
@@ -16,15 +17,19 @@ public class Story {
 
     static Scanner scanner = new Scanner(System.in);
 
-    public static void info() {
+    public static void info() throws InterruptedException {
         System.out.println("zırh almak istiyorsanız : 1\n\t\t");
         System.out.println("silah almak istiyorsanız : 2\n\t\t");
         int secim = scanner.nextInt();
         if (secim == 1) {
             System.out.println("zırhlar size karşı saldırıların direncini azaltır\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("+7 direnc sağlıcak zırh  ve 20 para :1\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("+10 direnc sağlıcak zırh  ve 30 para:2\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("+15 direnc sağlıcak zırh ve 40 para:3\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("güncel paranız:\t\t"+Game.yusuf.getMoney());
             int secimm = scanner.nextInt();
             switch (secimm) {
@@ -55,7 +60,7 @@ public class Story {
                         Player.setRealhealty(Player.getRealhealty() + armor.getResistance());
                         Game.yusuf.setHealthy(Game.yusuf.getHealthy()+armor.getResistance());
                         System.out.println("\nzırhınız giyildi\n\t\t");
-                        System.out.println("toplam sağlığınız : \n\t\t"+ Game.yusuf.getHealthy());
+                        System.out.println("toplam sağlığınız : \t\t"+ Game.yusuf.getHealthy());
                     }
                     else{
                         System.out.println("paranız bu ürünü almaya yetmiyor\n\t\t");
@@ -71,7 +76,7 @@ public class Story {
                         Player.setRealhealty(Player.getRealhealty() + armor.getResistance());
                         Game.yusuf.setHealthy(Game.yusuf.getHealthy()+armor.getResistance());
                         System.out.println("\nzırhınız giyildi\n\t\t");
-                        System.out.println("toplam sağlığınız : \n\t\t"+ Game.yusuf.getHealthy());
+                        System.out.println("toplam sağlığınız : \t\t"+ Game.yusuf.getHealthy());
                     }
                     else{
                         System.out.println("paranız bu ürünü almaya yetmiyor\n\t\t");
@@ -85,9 +90,13 @@ public class Story {
 
         } else if (secim == 2) {
             System.out.println("silahlar size vurus gücü kazandırır\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("+4 vurus gücü sağlıcak   ve 15 para :1\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("+7 vurus gücü sağlıcak   ve 20 para:2\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("+12 vurus gücü  sağlıcak  ve 35 para:3\n\t\t");
+            TimeUnit.SECONDS.sleep(1);
             System.out.println("güncel paranız:\t\t"+Game.yusuf.getMoney());
             int secimm = scanner.nextInt();
             switch (secimm) {
@@ -99,7 +108,8 @@ public class Story {
                         System.out.println("kalan paranız: \t"+ Game.yusuf.getMoney());
                         Game.yusuf.setDamage(Game.yusuf.getDamage() + weapon.getResistance());
                         System.out.println("\nsilahınız alındı\n\t\t");
-                        System.out.println("saldırı gücünüz :\n\t\t"+Game.yusuf.getDamage());
+                        System.out.println("saldırı gücünüz :\t\t"+Game.yusuf.getDamage());
+                        TimeUnit.SECONDS.sleep(1);
                     }
                     else{
                         System.out.println("paranız bu ürünü almaya yetmiyor\n\t\t");
@@ -115,7 +125,8 @@ public class Story {
                         System.out.println("kalan paranız:\t "+ Game.yusuf.getMoney());
                         Game.yusuf.setDamage(Game.yusuf.getDamage() + weapon.getResistance());
                         System.out.println("\nsilahınız alındı\n\t\t");
-                        System.out.println("saldırı gücünüz :\n\t\t"+Game.yusuf.getDamage());
+                        System.out.println("saldırı gücünüz :\t\t"+Game.yusuf.getDamage());
+                        TimeUnit.SECONDS.sleep(1);
                     }
                     else{
                         System.out.println("paranız bu ürünü almaya yetmiyor\n\t\t");
@@ -130,7 +141,7 @@ public class Story {
                         System.out.println("kalan paranız: \t"+ Game.yusuf.getMoney());
                         Game.yusuf.setDamage(Game.yusuf.getDamage() + weapon.getResistance());
                         System.out.println("\nsilahınız alındı\n\t\t");
-                        System.out.println("saldırı gücünüz :\n\t\t"+Game.yusuf.getDamage());
+                        System.out.println("saldırı gücünüz :\t\t"+Game.yusuf.getDamage());
                     }
                     else{
                         System.out.println("paranız bu ürünü almaya yetmiyor\n\t\t");

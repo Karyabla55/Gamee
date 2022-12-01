@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class Player {
     static Scanner sc = new Scanner(System.in);
@@ -12,11 +13,15 @@ public class Player {
 
 
 
-    public static int chaMenu() {
+    public static int chaMenu() throws InterruptedException {
         System.out.println("LÜTFEN KARAKTERİNİZİ SECİNİZ\n\t\t");
+        TimeUnit.SECONDS.sleep(1);
         System.out.println("1-TÜRÜ:SAMURAY\t HASAR:5 \tSAGLIK:21 \tPARA:15");
+        TimeUnit.SECONDS.sleep(2);
         System.out.println("2-TÜRÜ:OKÇU \tHASAR:7 \tSAGLIK:18 \tPARA:20");
+        TimeUnit.SECONDS.sleep(2);
         System.out.println("3-TÜRÜ:ŞOVALYE \tHASAR:8 \tSAGLIK:24 \tPARA:5");
+        TimeUnit.SECONDS.sleep(2);
         int chaID = sc.nextInt();
         if (chaID < 1 || chaID > 3) {
             System.out.println("lütfen doğru karakter giriniz\n\t\t");
@@ -25,7 +30,7 @@ public class Player {
         return chaID;
     }
 
-    public void selectCha() {
+    public void selectCha() throws InterruptedException {
         switch (chaMenu()) {
             case 1:
                 setcName("SAMURAY");
@@ -60,11 +65,7 @@ public class Player {
                 break;
         }
 
-        System.out.println("karakteriniz...\n\t\t");
-        System.out.println("\n\t\tADI:"   + getcName());
-        System.out.println("\n\t\tHASARI:"   + getDamage());
-        System.out.println("\n\t\tSAĞLIĞI:"   + getHealthy());
-        System.out.println("\n\t\tPARASI:"   + getMoney());
+
 
 
     }
@@ -108,6 +109,12 @@ public class Player {
         Player.realhealty = realhealty;
     }
 
-
+    public void chainfo (){
+    System.out.println("karakteriniz...\n\t\t");
+    System.out.println("\n\t\tADI:"   + getcName());
+    System.out.println("\n\t\tHASARI:"   + getDamage());
+    System.out.println("\n\t\tSAĞLIĞI:"   + getHealthy());
+    System.out.println("\n\t\tPARASI:"   + getMoney());
+}
 
 }
